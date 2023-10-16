@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import {Text, View} from 'react-native';
+import { Text, View } from "react-native";
 
 const Page = () => {
-    return (
-        <Text>
-            Page
-        </Text>
-    );
+  return (
+    <View>
+      <Text>Page</Text>
+    </View>
+  );
 };
 
 export default Page;

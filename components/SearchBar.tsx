@@ -34,7 +34,7 @@ const SearchBar = () => {
 const styles = StyleSheet.create({
   container: {
     height: 60,
-    backgroundColor: "#fff",
+    backgroundColor: Colors.white,
   },
   section: {
     flexDirection: "row",

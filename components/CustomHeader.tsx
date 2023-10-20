@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useRef } from "react";
 import {
   SafeAreaView,
   View,
@@ -11,18 +10,26 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import Colors from "@/constants/Colors";
 import SearchBar from "@/components/SearchBar";
+import BottomSheet from "@/components/BottomSheet";
+import { BottomSheetModal } from "@gorhom/bottom-sheet";
 
 const CustomHeader = () => {
+  const bottomSheetRed = useRef<BottomSheetModal>(null);
+  const openModal = () => {
+    bottomSheetRed.current?.present();
+  };
+
   return (
     <SafeAreaView style={styles.safeArea}>
+      <BottomSheet ref={bottomSheetRed} />
       <View style={styles.container}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={openModal}>
           <Image
             style={styles.logo}
             source={require("@/assets/images/pngegg.png")}
           />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.titleContainer}>
+        <TouchableOpacity style={styles.titleContainer} onPress={openModal}>
           <Text style={styles.title}>Delivery * Now</Text>
           <View style={styles.location}>
             <Text style={styles.subTitle}>Lviv</Text>

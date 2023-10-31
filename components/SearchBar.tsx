@@ -33,7 +33,7 @@ const SearchBar = () => {
 
 const styles = StyleSheet.create({
   container: {
-    height: 60,
+    height: 50,
     backgroundColor: Colors.white,
   },
   section: {

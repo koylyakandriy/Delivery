@@ -120,7 +120,10 @@ const ParallaxScrollView = () => {
             keyExtractor={(item, index) => `${item.id}-${index}`}
             sections={DATA}
             renderItem={({ item, index }) => (
-              <Link href={"/"} asChild>
+              <Link
+                href={{ pathname: "/(modal)/dish", params: { id: item.id } }}
+                asChild
+              >
                 <TouchableOpacity style={styles.items}>
                   <View style={{ flex: 1 }}>
                     <Text style={styles.dish}>{item.name}</Text>

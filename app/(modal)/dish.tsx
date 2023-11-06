@@ -11,15 +11,18 @@ import Animated, {
   FadeInRight,
 } from "react-native-reanimated";
 import * as Haptics from "expo-haptics";
+import useBasketStore from "@/store/basketStore";
 
 const Dish = () => {
   const { id } = useLocalSearchParams();
-  const item = getDishById(Number(id));
+  const item = getDishById(Number(id))!;
   const router = useRouter();
+  const {addProduct} = useBasketStore()
 
   const addToCart = () => {
+    addProduct(item)
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).then(
-      () => router.back()
+      () =>router.back()
     );
   };
 
